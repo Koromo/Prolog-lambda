@@ -29,7 +29,6 @@ replace_free([var, X], B, _, [var, X], B).
 replace_free(_, _, _, [var, X], [var, X]).
 
 replace_free(A, B, S, [app, M, N], [app, X, Y]) :- replace_free(A, B, S, M, X), replace_free(A, B, S, N, Y).
-
 replace_free(A, B, S, [abst, X, M], [abst, X, N]) :- S2 = [X | S], replace_free(A, B, S2, M, N).
 
 % α変換
